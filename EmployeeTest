@@ -1,0 +1,58 @@
+using System;
+
+public class Employee
+{
+    public string firstName;
+    public string lastName;
+    public decimal monthlySalary;
+    public Employee (string fn, string ln, decimal ms)
+    {
+        firstName = fn;
+        lastName = ln;
+        monthlySalary = ms;
+        
+    }
+    public string FirstName
+    {
+        get {return firstName;}
+    }
+    public string LastName
+    {
+        get {return lastName;}
+    }
+    public decimal MonthlySalary
+    {
+        get 
+      { return monthlySalary; }
+        set 
+        {
+            if (value > 0)
+            monthlySalary = value;
+            else
+          Console.WriteLine (monthlySalary) ;
+    
+        }
+    }
+    
+    // 10% raise in the salary
+public decimal RaisedSalary ()
+{
+    return monthlySalary + (10/100 * monthlySalary);
+}
+ 
+    static public void Main ()
+    {
+       Employee firstobject = new Employee("Yinusa", "Abdullahi", 100);
+       Employee secondobject = new Employee ("Jesulayomi","Ajayi", 200);
+       
+       Console.WriteLine (" The first monthly salary is {0:C}", firstobject.MonthlySalary);
+       
+       Console.WriteLine ("The second monthly salary is {0:C}", secondobject.MonthlySalary);
+       
+       //Display raised salary
+       Console.WriteLine ("The first raised monthly salary is {0:C}", firstobject.RaisedSalary());
+
+Console.WriteLine ("The second raised monthly salary is {0:C}", secondobject.RaisedSalary());
+    }
+
+}
